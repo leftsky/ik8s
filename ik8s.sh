@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 自动安装docker
-yum install -y wget && wget -O idocker.sh https://oss.leftsky.top/idocker.sh && sh idocker.sh
+yum install -y wget && wget -O idocker.sh https://raw.githubusercontent.com/leftsky/ik8s/master/idocker.sh && sh idocker.sh
 
 systemctl stop firewalld
 systemctl disable firewalld
@@ -38,13 +38,13 @@ sudo sed -i '$aexport KUBECONFIG=/etc/kubernetes/admin.conf' ~/.bashrc
 sudo source ~/.bashrc
 export KUBECONFIG=/etc/kubernetes/admin.conf
 
-kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+kubectl apply -f https://raw.githubusercontent.com/leftsky/ik8s/master/kube-flannel.yml
 
 kubectl taint nodes --all node-role.kubernetes.io/master-
 # 安装 kubernetes dashboard
-kubectl apply -f https://oss.leftsky.top/k8s/recommended.yaml
+kubectl apply -f https://raw.githubusercontent.com/leftsky/ik8s/master/recommended.yaml
 # 安装 kubernetes dashboard auth
-kubectl apply -f https://oss.leftsky.top/k8s/k8sdashboard-auth.yaml
+kubectl apply -f https://raw.githubusercontent.com/leftsky/ik8s/master/k8sdashboard-auth.yaml
 
 kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}')
 
