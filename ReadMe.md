@@ -1,12 +1,12 @@
 # leftsky k8s 集群笔记
 
-### 一键脚本
-#### 安装docker
-    yum install -y wget && wget -O idocker.sh https://raw.githubusercontent.com/leftsky/ik8s/master/idocker.sh && sh idocker.sh
-### 自动安装 kubernetes
-    yum install -y wget && wget -O ik8s.sh https://raw.githubusercontent.com/leftsky/ik8s/master/ik8s.sh && sh ik8s.sh
+## 一键脚本
 ### 自动安装 kubernetes （国内）
     yum install -y wget && wget -O ik8s_cn.sh https://raw.githubusercontent.com/leftsky/ik8s/master/ik8s_cn.sh && sh ik8s_cn.sh
+### 自动安装 kubernetes
+    yum install -y wget && wget -O ik8s.sh https://raw.githubusercontent.com/leftsky/ik8s/master/ik8s.sh && sh ik8s.sh
+### 一键安装docker
+    yum install -y wget && wget -O idocker.sh https://raw.githubusercontent.com/leftsky/ik8s/master/idocker.sh && sh idocker.sh
 
 ### 关闭防火墙
     systemctl stop firewalld
