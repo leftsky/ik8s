@@ -2,11 +2,11 @@
 
 ### 一键脚本
 #### 安装docker
-    yum install -y wget && wget -O idocker.sh https://oss.leftsky.top/k8s/idocker.sh && sh idocker.sh
+    yum install -y wget && wget -O idocker.sh https://raw.githubusercontent.com/leftsky/ik8s/master/idocker.sh && sh idocker.sh
 ### 自动安装 kubernetes
-    yum install -y wget && wget -O ik8s.sh https://oss.leftsky.top/k8s/ik8s.sh && sh ik8s.sh
+    yum install -y wget && wget -O ik8s.sh https://raw.githubusercontent.com/leftsky/ik8s/master/ik8s.sh && sh ik8s.sh
 ### 自动安装 kubernetes （国内）
-    yum install -y wget && wget -O ik8s_cn.sh https://oss.leftsky.top/k8s/ik8s_cn.sh && sh ik8s_cn.sh
+    yum install -y wget && wget -O ik8s_cn.sh https://raw.githubusercontent.com/leftsky/ik8s/master/ik8s_cn.sh && sh ik8s_cn.sh
 
 ### 关闭防火墙
     systemctl stop firewalld
@@ -58,14 +58,6 @@
 
 ### master 作为node
     kubectl taint nodes --all node-role.kubernetes.io/master-
-
-### kubernetes dashboard
-    安装：
-    kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml
-    外网访问
-    kubectl proxy --address='0.0.0.0' --port=8888 --accept-hosts='^*$'
-    访问：
-    http://domain:8888/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 
 ### 创建私仓密钥
     kubectl create secret docker-registry alireg --docker-server=registry.cn-hongkong.aliyuncs.com --docker-username=leftskyzuoxiao --docker-password=xx
