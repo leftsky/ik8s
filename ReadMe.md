@@ -60,4 +60,4 @@
     kubectl taint nodes --all node-role.kubernetes.io/master-
 
 ### 创建私仓密钥
-    kubectl create secret docker-registry alireg --docker-server=registry.cn-hongkong.aliyuncs.com --docker-username=leftskyzuoxiao --docker-password=xx
+    kubectl create secret docker-registry alireg --docker-server=xxx.com --docker-username=xx --docker-password=xx
