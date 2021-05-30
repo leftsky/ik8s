@@ -62,9 +62,12 @@
 ### 修改 kubernetes dashboard 暴露的端口号
     kubectl edit service kubernetes-dashboard -n kubernetes-dashboard
 
+### 安装 ingress-nginx
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.46.0/deploy/static/provider/baremetal/deploy.yaml
+```
+
 ### 获得 kubernetes dashboard token
     kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}')
-
-
 ### 创建私仓密钥
     kubectl create secret docker-registry alireg --docker-server=xxx.com --docker-username=xx --docker-password=xx
