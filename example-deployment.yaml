@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: example
+  template:
+    metadata:
+      labels:
+        app: example
+    spec:
+      imagePullSecrets:
+      - name: secret
+      containers:
+      - name: example
+        image: image
+        env:
+        - name: APP_VERSION
+          value: 0.0.1
+
+        ports:
+        - containerPort: 80
