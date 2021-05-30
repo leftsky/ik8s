@@ -74,3 +74,6 @@
 
 ### 创建私仓密钥
     kubectl create secret docker-registry alireg --docker-server=xxx.com --docker-username=xx --docker-password=xx
+
+### 根据 https 密钥文件创建 secret
+    kubectl create secret tls xx-secret --key ./xx.key --cert ./xx.pem
