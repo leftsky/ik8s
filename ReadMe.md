@@ -68,5 +68,9 @@
 ### 获得 kubernetes dashboard token
     kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}')
 
+### 修改 nodeport 端口范围
+    vim /etc/kubernetes/manifests/kube-apiserver.yaml
+    - --service-node-port-range=1-65535
+
 ### 创建私仓密钥
     kubectl create secret docker-registry alireg --docker-server=xxx.com --docker-username=xx --docker-password=xx
