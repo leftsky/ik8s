@@ -59,5 +59,12 @@
 ### master 作为node
     kubectl taint nodes --all node-role.kubernetes.io/master-
 
+### 修改 kubernetes dashboard 暴露的端口号
+    kubectl edit service kubernetes-dashboard -n kubernetes-dashboard
+
+### 获得 kubernetes dashboard token
+    kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}')
+
+
 ### 创建私仓密钥
     kubectl create secret docker-registry alireg --docker-server=xxx.com --docker-username=xx --docker-password=xx
