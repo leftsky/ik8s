@@ -35,7 +35,7 @@ sudo systemctl enable --now kubelet
 kubeadm init --pod-network-cidr 10.244.0.0/16
 
 sudo sed -i '$aexport KUBECONFIG=/etc/kubernetes/admin.conf' ~/.bashrc
-sudo source ~/.bashrc
+source ~/.bashrc
 export KUBECONFIG=/etc/kubernetes/admin.conf
 
 kubectl apply -f https://raw.githubusercontent.com/leftsky/ik8s/master/kube-flannel.yml
