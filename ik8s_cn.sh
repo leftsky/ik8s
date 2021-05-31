@@ -41,6 +41,8 @@ docker pull registry.aliyuncs.com/google_containers/kube-proxy:v1.21.1
 docker pull registry.aliyuncs.com/google_containers/pause:3.4.1
 docker pull registry.aliyuncs.com/google_containers/etcd:3.4.13-0
 docker pull registry.aliyuncs.com/google_containers/coredns:1.8.0
+docker pull leftsky/k8s-images:ingress-nginx-controller_v0.46.0
+
 
 docker tag registry.aliyuncs.com/google_containers/kube-apiserver:v1.21.1 k8s.gcr.io/kube-apiserver:v1.21.1
 docker tag registry.aliyuncs.com/google_containers/kube-controller-manager:v1.21.1 k8s.gcr.io/kube-controller-manager:v1.21.1
@@ -49,6 +51,8 @@ docker tag registry.aliyuncs.com/google_containers/kube-proxy:v1.21.1 k8s.gcr.io
 docker tag registry.aliyuncs.com/google_containers/pause:3.4.1 k8s.gcr.io/pause:3.4.1
 docker tag registry.aliyuncs.com/google_containers/etcd:3.4.13-0 k8s.gcr.io/etcd:3.4.13-0
 docker tag registry.aliyuncs.com/google_containers/coredns:1.8.0 k8s.gcr.io/coredns/coredns:v1.8.0
+docker tag leftsky/k8s-images:ingress-nginx-controller_v0.46.0 k8s.gcr.io/ingress-nginx/controller:v0.46.0
+
 
 docker rmi registry.aliyuncs.com/google_containers/kube-apiserver:v1.21.1
 docker rmi registry.aliyuncs.com/google_containers/kube-controller-manager:v1.21.1
@@ -57,6 +61,7 @@ docker rmi registry.aliyuncs.com/google_containers/kube-proxy:v1.21.1
 docker rmi registry.aliyuncs.com/google_containers/pause:3.4.1
 docker rmi registry.aliyuncs.com/google_containers/etcd:3.4.13-0
 docker rmi registry.aliyuncs.com/google_containers/coredns:1.8.0
+docker rmi leftsky/k8s-images:ingress-nginx-controller_v0.46.0
 
 
 kubeadm init --pod-network-cidr 10.244.0.0/16
