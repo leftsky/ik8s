@@ -52,7 +52,7 @@ docker tag registry.aliyuncs.com/google_containers/pause:3.4.1 k8s.gcr.io/pause:
 docker tag registry.aliyuncs.com/google_containers/etcd:3.4.13-0 k8s.gcr.io/etcd:3.4.13-0
 docker tag registry.aliyuncs.com/google_containers/coredns:1.8.0 k8s.gcr.io/coredns/coredns:v1.8.0
 docker tag leftsky/k8s-images:ingress-nginx-controller_v0.46.0 k8s.gcr.io/ingress-nginx/controller:v0.46.0
-
+# k8s.gcr.io/ingress-nginx/controller:v0.46.0@sha256:52f0058bed0a17ab0fb35628ba97e8d52b5d32299fbc03cc0f6c7b9ff036b61a
 
 docker rmi registry.aliyuncs.com/google_containers/kube-apiserver:v1.21.1
 docker rmi registry.aliyuncs.com/google_containers/kube-controller-manager:v1.21.1
