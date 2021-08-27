@@ -30,34 +30,34 @@ repo_gpgcheck=0
 gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
 EOF
 
-sudo yum install -y kubelet-1.21.1 kubeadm-1.21.1 kubectl-1.21.1 --disableexcludes=kubernetes
+sudo yum install -y kubelet-1.21.4 kubeadm-1.21.4 kubectl-1.21.4 --disableexcludes=kubernetes
 sudo systemctl enable --now kubelet
 
 # 国内拉取镜像打 TAG
-docker pull registry.aliyuncs.com/google_containers/kube-apiserver:v1.21.1
-docker pull registry.aliyuncs.com/google_containers/kube-controller-manager:v1.21.1
-docker pull registry.aliyuncs.com/google_containers/kube-scheduler:v1.21.1
-docker pull registry.aliyuncs.com/google_containers/kube-proxy:v1.21.1
+docker pull registry.aliyuncs.com/google_containers/kube-apiserver:v1.21.4
+docker pull registry.aliyuncs.com/google_containers/kube-controller-manager:v1.21.4
+docker pull registry.aliyuncs.com/google_containers/kube-scheduler:v1.21.4
+docker pull registry.aliyuncs.com/google_containers/kube-proxy:v1.21.4
 docker pull registry.aliyuncs.com/google_containers/pause:3.4.1
 docker pull registry.aliyuncs.com/google_containers/etcd:3.4.13-0
 docker pull registry.aliyuncs.com/google_containers/coredns:1.8.0
 docker pull leftsky/k8s-images:ingress-nginx-controller_v0.46.0
 
 
-docker tag registry.aliyuncs.com/google_containers/kube-apiserver:v1.21.1 k8s.gcr.io/kube-apiserver:v1.21.1
-docker tag registry.aliyuncs.com/google_containers/kube-controller-manager:v1.21.1 k8s.gcr.io/kube-controller-manager:v1.21.1
-docker tag registry.aliyuncs.com/google_containers/kube-scheduler:v1.21.1 k8s.gcr.io/kube-scheduler:v1.21.1
-docker tag registry.aliyuncs.com/google_containers/kube-proxy:v1.21.1 k8s.gcr.io/kube-proxy:v1.21.1
+docker tag registry.aliyuncs.com/google_containers/kube-apiserver:v1.21.4 k8s.gcr.io/kube-apiserver:v1.21.4
+docker tag registry.aliyuncs.com/google_containers/kube-controller-manager:v1.21.4 k8s.gcr.io/kube-controller-manager:v1.21.4
+docker tag registry.aliyuncs.com/google_containers/kube-scheduler:v1.21.4 k8s.gcr.io/kube-scheduler:v1.21.4
+docker tag registry.aliyuncs.com/google_containers/kube-proxy:v1.21.4 k8s.gcr.io/kube-proxy:v1.21.4
 docker tag registry.aliyuncs.com/google_containers/pause:3.4.1 k8s.gcr.io/pause:3.4.1
 docker tag registry.aliyuncs.com/google_containers/etcd:3.4.13-0 k8s.gcr.io/etcd:3.4.13-0
 docker tag registry.aliyuncs.com/google_containers/coredns:1.8.0 k8s.gcr.io/coredns/coredns:v1.8.0
 docker tag leftsky/k8s-images:ingress-nginx-controller_v0.46.0 k8s.gcr.io/ingress-nginx/controller:v0.46.0
 # k8s.gcr.io/ingress-nginx/controller:v0.46.0@sha256:52f0058bed0a17ab0fb35628ba97e8d52b5d32299fbc03cc0f6c7b9ff036b61a
 
-docker rmi registry.aliyuncs.com/google_containers/kube-apiserver:v1.21.1
-docker rmi registry.aliyuncs.com/google_containers/kube-controller-manager:v1.21.1
-docker rmi registry.aliyuncs.com/google_containers/kube-scheduler:v1.21.1
-docker rmi registry.aliyuncs.com/google_containers/kube-proxy:v1.21.1
+docker rmi registry.aliyuncs.com/google_containers/kube-apiserver:v1.21.4
+docker rmi registry.aliyuncs.com/google_containers/kube-controller-manager:v1.21.4
+docker rmi registry.aliyuncs.com/google_containers/kube-scheduler:v1.21.4
+docker rmi registry.aliyuncs.com/google_containers/kube-proxy:v1.21.4
 docker rmi registry.aliyuncs.com/google_containers/pause:3.4.1
 docker rmi registry.aliyuncs.com/google_containers/etcd:3.4.13-0
 docker rmi registry.aliyuncs.com/google_containers/coredns:1.8.0
