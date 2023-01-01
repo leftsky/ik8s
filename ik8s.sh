@@ -32,6 +32,11 @@ EOF
 sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 sudo systemctl enable --now kubelet
 
+# 清理默认配置containerd文件，并重启 containerd
+rm -f /etc/containerd/config.toml
+systemctl restart containerd
+
+
 kubeadm init --pod-network-cidr 10.244.0.0/16
 
 sudo sed -i '$aexport KUBECONFIG=/etc/kubernetes/admin.conf' ~/.bashrc
@@ -39,8 +44,9 @@ source ~/.bashrc
 export KUBECONFIG=/etc/kubernetes/admin.conf
 
 kubectl apply -f https://raw.githubusercontent.com/leftsky/ik8s/master/kube-flannel.yml
+# kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/v0.20.2/Documentation/kube-flannel.yml
 
-kubectl taint nodes --all node-role.kubernetes.io/master-
+kubectl taint nodes --all node-role.kubernetes.io/control-plane-
 # 安装 kubernetes dashboard
 kubectl apply -f https://raw.githubusercontent.com/leftsky/ik8s/master/recommended.yaml
 # 安装 kubernetes dashboard auth
